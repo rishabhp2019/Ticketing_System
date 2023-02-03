@@ -25,5 +25,3 @@ $(document).ready(function(){
 $('a').click(function(event){
     event.preventDefault(); 
 	});
-
-// End of JS Functions for login page
