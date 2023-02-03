@@ -18,14 +18,22 @@
 
     <div class="box">   
         <body>
-            <form method="post" action="index.html">
+            <form method="POST" action="index.php">
                   <h1>TicketSystem</h1>
-                  <input type="email" name="email" value="email" onFocus="field_focus(this, 'email');" onblur="field_blur(this, 'email');" class="email" />
               
-                  <input type="password" name="email" value="email" onFocus="field_focus(this, 'email');" onblur="field_blur(this, 'email');" class="email" />
+                  <input type="FirstName" name="FirstName" value="FirstName" onFocus="field_focus(this, 'FirstName');" onblur="field_blur(this, 'FirstName');" class="FirstName" />
               
+                  <input type="LastName" name="LastName" value="LastName" onFocus="field_focus(this, 'LastName');" onblur="field_blur(this, 'LastName');" class="LastName" />
+
+                  <input type="Device" name="Device" value="Device" onFocus="field_focus(this, 'Device');" onblur="field_blur(this, 'Device');" class="Device" />
+
+                  <input type="OS" name="OS" value="OS" onFocus="field_focus(this, 'OS');" onblur="field_blur(this, 'OS');" class="OS" />
+
+                  <input type="IssueDescription" name="IssueDescription" value="IssueDescription" onFocus="field_focus(this, 'IssueDescription');" onblur="field_blur(this, 'IssueDescription');" class="IssueDescription" />
                   <a href="#">
-                    <div class="btn">Sign In</div>
+                    <div class="btn">Submit
+                        <name="signin" id="Submit" value="Submit">
+                    </div>
                   </a>
               </form>
         </body>

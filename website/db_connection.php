@@ -1,0 +1,9 @@
+<?php
+    include 'test.php';
+
+    $conn = OpenCon();
+
+    echo "Connected Successfully";
+
+    CloseCon($conn);
+?>
