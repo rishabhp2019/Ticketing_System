@@ -17,33 +17,31 @@
     </head>
 
     <div class="box">   
-        <body>
-            <form action="index.php" method="post" name="TicketSystem">
+            <form action="index.php" method="post">
                   <h1>TicketSystem</h1>
               
-                  <input type="FirstName" name="FirstName" value="FirstName" onFocus="field_focus(this, 'FirstName');" onblur="field_blur(this, 'FirstName');" class="FirstName" />
+                  <input type="FirstName" name="fname" value="FirstName" onFocus="field_focus(this, 'FirstName');" onblur="field_blur(this, 'FirstName');" class="FirstName" required/>
               
-                  <input type="LastName" name="LastName" value="LastName" onFocus="field_focus(this, 'LastName');" onblur="field_blur(this, 'LastName');" class="LastName" />
+                  <input type="LastName" name="lname" value="LastName" onFocus="field_focus(this, 'LastName');" onblur="field_blur(this, 'LastName');" class="LastName" required/>
 
-                  <input type="Device" name="Device" value="Device" onFocus="field_focus(this, 'Device');" onblur="field_blur(this, 'Device');" class="Device" />
+                  <input type="Device" name="device" value="Device" onFocus="field_focus(this, 'Device');" onblur="field_blur(this, 'Device');" class="Device" required/>
 
-                  <input type="OS" name="OS" value="OS" onFocus="field_focus(this, 'OS');" onblur="field_blur(this, 'OS');" class="OS" />
+                  <input type="OS" name="os" value="OS" onFocus="field_focus(this, 'OS');" onblur="field_blur(this, 'OS');" class="OS" required/>
 
-                  <input type="IssueDescription" name="IssueDescription" value="IssueDescription" onFocus="field_focus(this, 'IssueDescription');" onblur="field_blur(this, 'IssueDescription');" class="IssueDescription" />
+                  <input type="IssueDescription" name="issue" value="IssueDescription" onFocus="field_focus(this, 'IssueDescription');" onblur="field_blur(this, 'IssueDescription');" class="IssueDescription" required/>
 
                   <input type="Submit" name="Submit" id="Submit" value="Submit">
               </form>
-        </body>
     </div>    
 
         <!-- 
         This script tags load jQuery, any plugins you've downloaded, 
         and your main JavaScript file into your web page
         -->
-        <!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script> // commented out to load website faster on VM
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script> 
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
         <script src="js/plugins.js"></script>
         <script src="js/main.js"></script>
-        -->
+
     </body>
 </html>

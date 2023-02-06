@@ -93,7 +93,7 @@
     border-radius:4px;
   }
 
-  .btn{
+  .Submit{
     background:#2ecc71;
     width:125px;
     padding-top:5px;
@@ -109,7 +109,7 @@
     font-size:0.8em;
   }
   
-  .btn:hover{
+  .Submit:hover{
     background:#2CC06B; 
   }
   

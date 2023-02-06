@@ -1,34 +1,39 @@
 <?php
-    //Retrives Login Information from Login Page
-    if(isset($_POST['Submit']))
-    {
-        // Connects to database (login)    
-        $host = 'localhost';
-        $username = 'root';
-        $password = '';
-        $dbname = 'TicketSystem';
 
-        //Verifies the connection is made 
-        $con = mysqli_connect($host, $username, $password, $dbname);
+$fname = $_POST['fname'];
+$lname = $_POST['lname'];
+$device = $_POST['device'];
+$os = $_POST['os'];
+$issue = $_POST['issue'];
 
-        $fname = $mysqli->real_escape_string($_POST['FirstName']);
-        $lname = $mysqli->real_escape_string($_POST['LastName']);
-        $device = $mysqli->real_escape_string($_POST['Device']);
-        $OS = $mysqli->real_escape_string($_POST['OS']);
-        $issue = $mysqli->real_escape_string($_POST['IssueDescription']);
-                
-        //using sql to do a data entry
-        $sql = "INSERT INTO `ticket` (`TicketID`, `LastName`, `FirstName`, `Device`, `OS`, `IssueDescription`, `Solved`) VALUES (NULL, '$fname', '$lname', '$device', '$OS', '$issue', 'N')";
+if (empty($fname) || ($lname) || ($device) || ($os) || ($issue)){
+    echo "All fields are required.";
+    die();
+} else {
+    $host = "localhost";
+    $dbUser = "root";
+    $dbPass = "";
+    $dbName = "test";
 
-        $rs = mysqli_query($con, $sql);
+    //connect to the db
+    $con = new mysqli($host, $dbUser, $dbPass, $dbName);
 
-        if ($rs){
-            echo "Forum Submitted.";
-        }
-        else if {!$rs}{
-            echo "Could not Submit";
-        }
+    if (mysqli_connect_error()) {
+        die('Connect Error (' . mysqli_connect_errno() . ')' . mysqli_connect_error());
+    } else {
+        $INSERT = "INSERT INTO `test` (`fname`, `lname`, `device`, `os`, `issue`) VALUES (?, ?, ?, ?, ?)";
+        
+        //Statement
+        $stmt = $conn->prepare($INSERT);
+        $stmt->bind_param($fname, $lname, $device, $os, $issue);
+        $stmt->execute();
+        echo "Submitted";
+        $stmt->close();
+        $con->close();
+    } 
 
-        exit;
-    }
+}
+
 ?>
+ 
+
