@@ -1,47 +1,34 @@
 <?php
-
     //Retrives Login Information from Login Page
     if(isset($_POST['Submit']))
     {
-        $fname = $_POST['FirstName'];
-        $lname = $_POST['LastName'];
-        $device = $_POST['Device'];
-        $OS = $_POST['OS'];
-        $issue = $_POST['IssueDescription'];       
-    
-
-
-        // Connects to database (login)
-        
+        // Connects to database (login)    
         $host = 'localhost';
         $username = 'root';
-        $password = "";
-        $dbname = "TicketSystem";
+        $password = '';
+        $dbname = 'TicketSystem';
 
         //Verifies the connection is made 
         $con = mysqli_connect($host, $username, $password, $dbname);
 
-        if (!$con)
-        {
-            die("Connection failed!" . mysqli_connect_error());
-        }
-
+        $fname = $mysqli->real_escape_string($_POST['FirstName']);
+        $lname = $mysqli->real_escape_string($_POST['LastName']);
+        $device = $mysqli->real_escape_string($_POST['Device']);
+        $OS = $mysqli->real_escape_string($_POST['OS']);
+        $issue = $mysqli->real_escape_string($_POST['IssueDescription']);
+                
         //using sql to do a data entry
-        $sql = "INSERT INTO `ticket` (`TicketID`, `LastName`, `FirstName`, `Device`, `OS`, `IssueDescription`, `Solved`) VALUES (NULL, '$lname','$fname','$device','$OS','$issue','N')";
+        $sql = "INSERT INTO `ticket` (`TicketID`, `LastName`, `FirstName`, `Device`, `OS`, `IssueDescription`, `Solved`) VALUES (NULL, '$fname', '$lname', '$device', '$OS', '$issue', 'N')";
 
-        //send query to the database and confirm if successful
+        $rs = mysqli_query($con, $sql);
 
-        $send = mysqli_query($con, $sql);
-        if($send)
-        {
-            echo '<script>console.log("Ticket Submitted"); </script>';
+        if ($rs){
+            echo "Forum Submitted.";
+        }
+        else if {!$rs}{
+            echo "Could not Submit";
         }
 
-        //close connection
-        mysqli_close($con);
-
-        echo '<script>console.log("End of Script... Ticket should have submitted."); </script>';
-
-    exit;
+        exit;
     }
 ?>

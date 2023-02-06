@@ -18,7 +18,7 @@
 
     <div class="box">   
         <body>
-            <form method="post" action="index.php">
+            <form action="index.php" method="post" name="TicketSystem">
                   <h1>TicketSystem</h1>
               
                   <input type="FirstName" name="FirstName" value="FirstName" onFocus="field_focus(this, 'FirstName');" onblur="field_blur(this, 'FirstName');" class="FirstName" />
@@ -30,11 +30,8 @@
                   <input type="OS" name="OS" value="OS" onFocus="field_focus(this, 'OS');" onblur="field_blur(this, 'OS');" class="OS" />
 
                   <input type="IssueDescription" name="IssueDescription" value="IssueDescription" onFocus="field_focus(this, 'IssueDescription');" onblur="field_blur(this, 'IssueDescription');" class="IssueDescription" />
-                  <a href="#">
-                    <div class="btn">Submit
-                        <name="Submit" id="Submit" value="Submit" input type = 'Submit'/>
-                    </div>
-                  </a>
+
+                  <input type="Submit" name="Submit" id="Submit" value="Submit">
               </form>
         </body>
     </div>    
@@ -43,9 +40,10 @@
         This script tags load jQuery, any plugins you've downloaded, 
         and your main JavaScript file into your web page
         -->
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script> // commented out to load website faster on VM
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
         <script src="js/plugins.js"></script>
         <script src="js/main.js"></script>
+        -->
     </body>
 </html>
