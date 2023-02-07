@@ -20,12 +20,12 @@ $issue = $_POST['issue'];
     //connect to the db
     // $con = mysqli_connect($host, $dbUser, $dbPass, $dbName);
 
-$conn = new mysqli('localhost', 'root', '', 'test');
+$conn = new mysqli('localhost', 'root', '', 'TicketSystem');
 
     if ($conn->connect_error) {
         die('Connection failed : '.$conn->connect_error);
     } else {
-        $insert = "INSERT INTO test (`fname`, `lname`, `device`, `os`, `issue`) VALUES (?, ?, ?, ?, ?)";
+        $insert = "INSERT INTO ticket (`LastName`, `FirstName`, `Device`, `OS`, `IssueDescription`) VALUES (?, ?, ?, ?, ?)";
         
         // Statement
         $stmt = $conn->prepare($insert);
