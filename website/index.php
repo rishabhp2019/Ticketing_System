@@ -6,31 +6,38 @@ $device = $_POST['device'];
 $os = $_POST['os'];
 $issue = $_POST['issue'];
 
-if (empty($fname) || ($lname) || ($device) || ($os) || ($issue)){
-    echo "All fields are required.";
-    die();
-} else {
-    $host = "localhost";
-    $dbUser = "root";
-    $dbPass = "";
-    $dbName = "test";
+// if (empty($fname) || empty($lname) || empty($device) || empty($os) || empty($issue)){
+//     echo "All fields are required.";
+//     die();
+// }
+// } else {
+    // $host = "localhost";
+    // $dbUser = "root";
+    // $dbPass = "";
+    // $dbName = "test";
+    
 
     //connect to the db
-    $con = new mysqli($host, $dbUser, $dbPass, $dbName);
+    // $con = mysqli_connect($host, $dbUser, $dbPass, $dbName);
 
-    if (mysqli_connect_error()) {
-        die('Connect Error (' . mysqli_connect_errno() . ')' . mysqli_connect_error());
+$conn = new mysqli('localhost', 'root', '', 'test');
+
+    if ($conn->connect_error) {
+        die('Connection failed : '.$conn->connect_error);
     } else {
-        $INSERT = "INSERT INTO `test` (`fname`, `lname`, `device`, `os`, `issue`) VALUES (?, ?, ?, ?, ?)";
+        $insert = "INSERT INTO test (`fname`, `lname`, `device`, `os`, `issue`) VALUES (?, ?, ?, ?, ?)";
         
-        //Statement
-        $stmt = $conn->prepare($INSERT);
-        $stmt->bind_param($fname, $lname, $device, $os, $issue);
+        // Statement
+        $stmt = $conn->prepare($insert);
+        $stmt->bind_param("sssss",$fname, $lname, $device, $os, $issue);
         $stmt->execute();
         echo "Submitted";
         $stmt->close();
-        $con->close();
-    } 
+        $conn->close();
+        // mysqli_query($conn, $insert);
+        // echo "Submitted";
+        
+    // } 
 
 }
 
