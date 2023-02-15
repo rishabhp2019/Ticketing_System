@@ -15,12 +15,23 @@
 
 </head>
 <body>
+    <br><br>
     <form action="" method="get">
         <input type="text" name="filter" placeholder="Filter">
         <button class="btnn">Search</button>
     </form>
-    <table class="tablee">
-        </table>
+    
+    <br><br>
+    Completed a ticket? Please enter the id corresponding to the ticket you have answered below.
+    <br><br>
+
+
+    <form action="" method="get">
+        <input type="text" name="finishedID" placeholder="ID">
+        <button class="btnn">Submit</button>
+    </form>
+    
+    
         
     <div id="myId">
     <?php
@@ -33,8 +44,8 @@
     // prints headings
     echo "<br>
           <br>";
-    echo "<table class="tablee">";
-    echo"<thread>"
+    echo "<table class='tablee'>";
+    echo "<thead>";
     echo"<tr>
         <th>ID</th>
         <th>Last Name</th>
@@ -43,7 +54,7 @@
         <th>OS</th>
         <th>Issue Description</th>
         <th>Solved?</th>
-        </tr></thread>";
+        </tr></thead>";
     
     // prints each row/column
     while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)){
@@ -87,8 +98,8 @@
         // prints headings
         echo "<br>
               <br>";
-        echo "<table>";
-        echo"<tr>
+        echo "<table class='tablee'>";
+        echo"<thead><tr>
         <th>ID</th>
         <th>Last Name</th>
         <th>First Name</th>
@@ -96,7 +107,7 @@
         <th>OS</th>
         <th>Issue Description</th>
         <th>Solved?</th>
-        </tr>";
+        </tr></thead>";
     
         // prints each row/column
         while ($row2 = mysqli_fetch_array($result2, MYSQLI_ASSOC)){
@@ -119,13 +130,10 @@
     }
 
     echo "</table><br><br><br>";
-    echo 'Please enter the id corresponding to the ticket you have answered.<br><br>'
+    
 
     ?>
-    <form action="" method="get">
-        <input type="text" name="finishedID" placeholder="ID">
-        <button class="btnn">Submit</button>
-    </form>
+    
 
     <?php
     if (isset ($_GET['finishedID'])){
@@ -151,8 +159,8 @@
         // prints headings
         echo "<br>
               <br>";
-        echo "<table>";
-        echo"<tr>
+        echo "<table class='tablee'>";
+        echo"<thead><tr>
         <th>ID</th>
         <th>Last Name</th>
         <th>First Name</th>
@@ -160,7 +168,7 @@
         <th>OS</th>
         <th>Issue Description</th>
         <th>Solved?</th>
-        </tr>";
+        </tr></thead>";
     
         // prints each row/column
         while ($row4 = mysqli_fetch_array($result4, MYSQLI_ASSOC)){
